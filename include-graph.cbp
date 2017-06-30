@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Linker>
+			<Add option="-lboost_system-mt" />
+			<Add option="-lboost_filesystem-mt" />
+		</Linker>
+		<Unit filename="graph.cpp" />
+		<Unit filename="graph.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
