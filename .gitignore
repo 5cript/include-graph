@@ -1,0 +1,6 @@
+bin/*
+obj/*
+dependencyGraph.txt
+graph.dot
+*.depend
+*build_log.html
