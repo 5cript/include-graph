@@ -4,13 +4,14 @@
 	<Project>
 		<Option title="include-graph" />
 		<Option pch_mode="2" />
-		<Option compiler="msys2_64" />
+		<Option compiler="msys2_32" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/include-graph" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
-				<Option compiler="msys2_64" />
+				<Option compiler="msys2_32" />
+				<Option parameters="-d D:/Tools/graphviz/bin/dot.exe -s -f png -b boost/asio.hpp,property_tree/ptree.hpp,boost/optional.hpp" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -19,12 +20,15 @@
 				<Option output="bin/Release/include-graph" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
-				<Option compiler="msys2_64" />
+				<Option compiler="msys2_32" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-static" />
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
 				</Linker>
 			</Target>
 		</Build>
@@ -35,10 +39,13 @@
 		<Linker>
 			<Add option="-lboost_system-mt" />
 			<Add option="-lboost_filesystem-mt" />
+			<Add option="-lboost_program_options-mt" />
 		</Linker>
 		<Unit filename="graph.cpp" />
 		<Unit filename="graph.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="stl_headers.cpp" />
+		<Unit filename="stl_headers.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
