@@ -4,3 +4,7 @@ dependencyGraph.txt
 graph.dot
 *.depend
 *build_log.html
+*.save-failed
+graph.png
+graph.svg
+*.layout
